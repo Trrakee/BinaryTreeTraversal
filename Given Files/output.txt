@@ -1,0 +1,227 @@
+ Preorder traversal --> a b d e c f g h 
+  Inorder traversal --> d b e a c g h f 
+Postorder traversal --> d e b h g f c a 
+
+(a (b d e) (c () (f (g () h) ())))
+
+(a
+  (b
+    d
+    e
+  )
+  (c
+    ()
+    (f
+      (g
+        ()
+        h
+      )
+      ()
+    )
+  )
+)
+
+(a
+  (b d e)
+  (c
+    ()
+    (f
+      (g () h)
+      ()
+    )
+  )
+)
+
+(a (b d e)
+   (c ()
+      (f (g () h)
+         ()
+      )
+   )
+)
+
+ Preorder traversal --> a b d e h i c f j k g 
+  Inorder traversal --> d b h e i a j f k c g 
+Postorder traversal --> d h i e b j k f g c a 
+
+(a (b d (e h i)) (c (f j k) g))
+
+(a
+  (b
+    d
+    (e
+      h
+      i
+    )
+  )
+  (c
+    (f
+      j
+      k
+    )
+    g
+  )
+)
+
+(a
+  (b
+    d
+    (e h i)
+  )
+  (c
+    (f j k)
+    g
+  )
+)
+
+(a (b d
+      (e h i)
+   )
+   (c (f j k)
+      g
+   )
+)
+
+ Preorder traversal --> * + / a 2 b ^ c 3 
+  Inorder traversal --> a / 2 + b * c ^ 3 
+Postorder traversal --> a 2 / b + c 3 ^ * 
+
+(* (+ (/ a 2) b) (^ c 3))
+
+(*
+  (+
+    (/
+      a
+      2
+    )
+    b
+  )
+  (^
+    c
+    3
+  )
+)
+
+(*
+  (+
+    (/ a 2)
+    b
+  )
+  (^ c 3)
+)
+
+(* (+ (/ a 2)
+      b
+   )
+   (^ c 3)
+)
+
+ Preorder traversal --> / + - b sqrt - ^ b 2 * 4 * a c * 2 a 
+  Inorder traversal --> - b + sqrt b ^ 2 - 4 * a * c / 2 * a 
+Postorder traversal --> b - b 2 ^ 4 a c * * - sqrt + 2 a * / 
+
+(/ (+ (- () b) (sqrt () (- (^ b 2) (* 4 (* a c))))) (* 2 a))
+
+(/
+  (+
+    (-
+      ()
+      b
+    )
+    (sqrt
+      ()
+      (-
+        (^
+          b
+          2
+        )
+        (*
+          4
+          (*
+            a
+            c
+          )
+        )
+      )
+    )
+  )
+  (*
+    2
+    a
+  )
+)
+
+(/
+  (+
+    (- () b)
+    (sqrt
+      ()
+      (-
+        (^ b 2)
+        (*
+          4
+          (* a c)
+        )
+      )
+    )
+  )
+  (* 2 a)
+)
+
+(/ (+ (- () b)
+      (sqrt ()
+            (- (^ b 2)
+               (* 4
+                  (* a c)
+               )
+            )
+      )
+   )
+   (* 2 a)
+)
+
+ Preorder traversal --> if < a b while != a b = a + a 1 
+  Inorder traversal --> a < b if a != b while a = a + 1 
+Postorder traversal --> a b < a b != a a 1 + = while if 
+
+(if (< a b) (while (!= a b) (= a (+ a 1))))
+
+(if
+  (<
+    a
+    b
+  )
+  (while
+    (!=
+      a
+      b
+    )
+    (=
+      a
+      (+
+        a
+        1
+      )
+    )
+  )
+)
+
+(if
+  (< a b)
+  (while
+    (!= a b)
+    (=
+      a
+      (+ a 1)
+    )
+  )
+)
+
+(if (< a b)
+    (while (!= a b)
+           (= a
+              (+ a 1)
+           )
+    )
+)
+
