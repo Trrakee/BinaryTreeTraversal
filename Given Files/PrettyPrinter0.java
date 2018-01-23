@@ -19,7 +19,7 @@ public class PrettyPrinter0
       }
       else
       {
-         result += "(" + tree.getElement() + " ";
+         result += "(" + tree.getElement() + "||";
          result += prettyPrint( tree.getLeftTree() ) + " ";
          result += prettyPrint( tree.getRightTree()) + ")";
       }
