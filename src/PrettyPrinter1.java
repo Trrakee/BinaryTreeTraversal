@@ -1,45 +1,39 @@
-/*
+/**
+ ----------------------------------
+ | Program created by Tushar Sharma.|
+ | CS31600 Homework 1               |
+ | Email: sharm191@pnw.edu          |
+ | File Info: PrettyPrinter1.java   |
+ ----------------------------------
+ */
 
-
-*/
 
 /**
  The prettyPrint() method takes a BTree and
  converts it into a well formated string.
  */
-
-public class PrettyPrinter1
-{
-    public static String prettyPrint(BTree tree)
-    {
+public class PrettyPrinter1 {
+    public static String prettyPrint(BTree tree) {
         return prettyPrint(tree, "  ");
     }
-
-
     /**
-     This prettyPrint() method is essentially a
-     preorder traversal of the tree.
+     * This prettyPrint() method is essentially a
+     * preorder traversal of the tree.
      */
-    private static String prettyPrint(BTree tree, String indentation)
-    {
+    private static String prettyPrint(BTree tree, String indentation) {
         String result = "";
         if (tree == null)  // empty tree (stops the recursion)
         {
             result += "()";
-        }
-        else if (tree.depth() == 0)  // depth==0 stops the recursion also
+        } else if (tree.depth() == 0)  // depth==0 stops the recursion also
         {
             result += tree.getElement();
+        } else {
+            result += "(" + tree.getElement() + "\n";
+            result += indentation + (prettyPrint(tree.getLeftTree(), indentation + "  ") + "\n");
+            result += indentation + (prettyPrint(tree.getRightTree(), indentation + "  ")) + "\n";
+            result += indentation.substring(0, indentation.length() - 2) + ")";
         }
-        else {
-
-            result +=  "(" + tree.getElement() +  "\n" ;
-            result += indentation + (prettyPrint(tree.getLeftTree(),indentation + "  " ) +  "\n");
-            result += indentation + (prettyPrint(tree.getRightTree(),indentation + "  " ))  +"\n";
-            result += indentation.substring(0,indentation.length()-2) + ")";
-            }
-
-
         return result;
     }
 }

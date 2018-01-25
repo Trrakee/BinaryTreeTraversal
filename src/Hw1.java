@@ -3,13 +3,15 @@
  | Program created by Tushar Sharma.|
  | CS31600 Homework 1               |
  | Email: sharm191@pnw.edu          |
- | File Info: Binary Trees          |
+ | File Info: Hw1.java              |
  ----------------------------------
  */
+
 
 public class Hw1 {
     public static void main(String[] args) {
         // Here is the Java declaration of the above binary tree.
+/** Binary Tree 1 **/
         BTree bTree1 = new BTree("a",
                 new BTree("b",
                         new BTree("d"),
@@ -21,8 +23,8 @@ public class Hw1 {
                                         null,
                                         new BTree("h")),
                                 null)));
-
         // Write the Java declaration for the binary tree in picture bTree2.png.
+/** Binary Tree 2 **/
         BTree bTree2 = new BTree("a",
                 new BTree("b",
                         new BTree("d"),
@@ -34,9 +36,8 @@ public class Hw1 {
                                 new BTree("j"),
                                 new BTree("k")),
                         new BTree("g")));
-
-
         // Write the Java declaration for the binary tree in picture bTree3.png.
+/** Binary Tree 3 **/
         BTree bTree3 = new BTree("*",
                 new BTree("+",
                         new BTree("/",
@@ -46,9 +47,8 @@ public class Hw1 {
                 new BTree("^",
                         new BTree("c"),
                         new BTree("3")));
-
-
         // Write the Java declaration for the binary tree in picture bTree4.png.
+/** Binary Tree 4 **/
         BTree bTree4 = new BTree("/",
                 new BTree("+",
                         new BTree("-",
@@ -68,8 +68,8 @@ public class Hw1 {
                 new BTree("*",
                         new BTree("2"),
                         new BTree("a")));
-
         // Write the Java declaration for the binary tree in picture bTree5.png.
+/** Binary Tree 5 **/
         BTree bTree5 = new BTree("if",
                 new BTree("<",
                         new BTree("a"),
@@ -83,8 +83,6 @@ public class Hw1 {
                                 new BTree("+",
                                         new BTree("a"),
                                         new BTree("1")))));
-
-
         System.out.println(" Preorder traversal --> " + Traverse.preOrder(bTree1));
         System.out.println("  Inorder traversal --> " + Traverse.inOrder(bTree1));
         System.out.println("Postorder traversal --> " + Traverse.postOrder(bTree1) + "\n");
@@ -132,6 +130,5 @@ public class Hw1 {
         System.out.println(PrettyPrinter1.prettyPrint(bTree5) + "\n");
         System.out.println(PrettyPrinter2.prettyPrint(bTree5) + "\n");
         System.out.println(PrettyPrinter3.prettyPrint(bTree5) + "\n");
-
     }
 }
